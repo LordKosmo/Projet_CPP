@@ -2,12 +2,14 @@
 
 playable_character::playable_character()
 {
+	/*
 	strength = 0;
 	speed = 0;
 	defense = 0;
 	resistance = 0;
 	range = 0;
 	movement = 0;
+	*/
 }
 
 playable_character::playable_character(std::string n) {
