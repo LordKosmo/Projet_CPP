@@ -19,7 +19,8 @@ int main() {
 	playable_character c("Kerrigan");
 	cout << "Welcome to our game :" << endl;
 	cout << "This is our first character: " << endl;
-	cout << c.getName() << endl;
+	//cout << c.getName() << endl;
+	cout << c << endl;
 	//g.addChara(0, 0, c);
 	h[0][0].putChara(c);
 	cout << "This is the grid: " << endl;

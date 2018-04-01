@@ -23,5 +23,5 @@ private:
 	int movement;
 };
 
-std::iostream& operator<<(std::iostream& file, playable_character& c);
+std::ostream& operator<<(std::ostream& file, playable_character& c);
 #endif

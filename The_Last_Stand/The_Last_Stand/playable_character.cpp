@@ -11,8 +11,14 @@ playable_character::playable_character()
 }
 
 playable_character::playable_character(std::string n) {
-	playable_character();
+	//playable_character();
 	name = n;
+	strength = 0;
+	speed = 0;
+	defense = 0;
+	resistance = 0;
+	range = 0;
+	movement = 0;
 }
 
 
@@ -45,7 +51,7 @@ int playable_character::getResistance()
 	return resistance;
 }
 
-std::iostream & operator<<(std::iostream& file, playable_character & c)
+std::ostream & operator<<(std::ostream& file, playable_character & c)
 {
 	file << c.getName() << std::endl;
 	file << "Str: " << c.getStrength() << std::endl;
