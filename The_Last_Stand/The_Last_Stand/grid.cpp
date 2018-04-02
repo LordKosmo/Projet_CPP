@@ -6,7 +6,7 @@ grid::grid()
 {
 	map = new cell*[SIZE];
 	for (int i = 0; i < SIZE; ++i) {
-		map[i] = new cell();
+		map[i] = new cell[SIZE];
 	}
 }
 
