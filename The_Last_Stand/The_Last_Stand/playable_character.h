@@ -2,6 +2,7 @@
 #define H_CHARACTER
 #include <string>
 #include <iostream>
+#include "grid.h"
 class playable_character
 {
 public:
@@ -13,6 +14,9 @@ public:
 	int getSpeed();
 	int getDefense();
 	int getResistance();
+	int getRange();
+	int getMovement();
+	void movingRight(grid& map);
 private:
 	std::string name;
 	int strength;

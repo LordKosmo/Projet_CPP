@@ -9,6 +9,7 @@ public:
 	~grid();
 	void print();
 	void addChara(int, int, playable_character&);
+	void movingRight(playable_character&);
 private:
 	cell ** map;
 };
