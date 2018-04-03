@@ -2,25 +2,16 @@
 
 playable_character::playable_character()
 {
-	/*
-	strength = 0;
-	speed = 0;
-	defense = 0;
-	resistance = 0;
-	range = 0;
-	movement = 0;
-	*/
 }
 
 playable_character::playable_character(std::string n) {
-	//playable_character();
 	name = n;
-	strength = 0;
-	speed = 0;
-	defense = 0;
+	strength = 6;
+	speed = 4;
+	defense = 2;
 	resistance = 0;
-	range = 0;
-	movement = 0;
+	range = 1;
+	movement = 2;
 }
 
 
@@ -53,6 +44,19 @@ int playable_character::getResistance()
 	return resistance;
 }
 
+int playable_character::getRange() {
+	return range;
+}
+
+int playable_character::getMovement() {
+	return movement;
+}
+
+void playable_character::movingRight(grid& map)
+{
+	map.movingRight(*this);
+}
+
 std::ostream & operator<<(std::ostream& file, playable_character & c)
 {
 	file << c.getName() << std::endl;
@@ -60,5 +64,7 @@ std::ostream & operator<<(std::ostream& file, playable_character & c)
 	file << "Spd: " << c.getSpeed() << std::endl;
 	file << "Def: " << c.getDefense() << std::endl;
 	file << "Res: " << c.getResistance() << std::endl;
+	file << "Rge: " << c.getRange() << std::endl;
+	file << "Mvm: " << c.getMovement() << std::endl;
 	return file;
 }

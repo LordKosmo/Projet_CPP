@@ -10,6 +10,8 @@ public:
 	~cell();
 	void print();
 	void putChara(playable_character& c);
+	playable_character getChara();
+	void resetChara();
 private:
 	int bonus;
 	std::string type;

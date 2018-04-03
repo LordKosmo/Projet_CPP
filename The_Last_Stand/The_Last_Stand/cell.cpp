@@ -24,3 +24,13 @@ void cell::print() {
 void cell::putChara(playable_character& c) {
 	chara = &c;
 }
+
+playable_character cell::getChara()
+{
+	return *chara;
+}
+
+void cell::resetChara()
+{
+	chara = nullptr;
+}

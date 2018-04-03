@@ -34,3 +34,17 @@ void grid::addChara(int i, int j, playable_character& chara)
 	if(i >= 0 && i < SIZE && j >= 0 && j < SIZE)
 	map[i][j].putChara(chara);
 }
+
+void grid::movingRight(playable_character & chara)
+{
+	for (int i = 0; i < SIZE; ++i) {
+		for (int j = 0; j < SIZE; ++j) {
+			if (&chara == &map[i]->getChara()) {
+				if (j < SIZE - 1) {
+					map[i][j].resetChara();
+					map[i][j + 1].putChara(chara);
+				}
+			}
+		}
+	}
+}
