@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  cell.cpp
   gameView.cpp
 d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(13): error C2061: erreur de syntaxe : identificateur 'playable_character'
@@ -23,3 +24,10 @@ d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(1
 d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(19): error C2238: jetons inattendus avant ';'
   main.cpp
   Génération de code en cours...
+=======
+﻿  LINK : D:\EFREI\S6\C++\Projet\Projet_CPP\The_Last_Stand\Debug\The_Last_Stand.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
+main.obj : warning LNK4099: PDB 'vc141.pdb' n'a pu être trouvé avec 'main.obj' ou sur 'D:\EFREI\S6\C++\Projet\Projet_CPP\The_Last_Stand\Debug\vc141.pdb' ; l'objet sera lié sans informations de débogage
+playable_character.obj : warning LNK4099: PDB 'vc141.pdb' n'a pu être trouvé avec 'playable_character.obj' ou sur 'D:\EFREI\S6\C++\Projet\Projet_CPP\The_Last_Stand\Debug\vc141.pdb' ; l'objet sera lié sans informations de débogage
+cell.obj : warning LNK4099: PDB 'vc141.pdb' n'a pu être trouvé avec 'cell.obj' ou sur 'D:\EFREI\S6\C++\Projet\Projet_CPP\The_Last_Stand\Debug\vc141.pdb' ; l'objet sera lié sans informations de débogage
+  The_Last_Stand.vcxproj -> D:\EFREI\S6\C++\Projet\Projet_CPP\The_Last_Stand\Debug\The_Last_Stand.exe
+>>>>>>> 2b1db2c70f60faf90e5e1d937f9aef43e3690e04
