@@ -2,16 +2,19 @@
 
 playable_character::playable_character()
 {
+
 }
 
 playable_character::playable_character(std::string n) {
+	//playable_character();
 	name = n;
 	strength = 6;
 	speed = 4;
-	defense = 2;
+	defense = 1;
 	resistance = 0;
 	range = 1;
-	movement = 2;
+	movement = 1;
+	hp = 10;
 }
 
 
@@ -52,19 +55,12 @@ int playable_character::getMovement() {
 	return movement;
 }
 
-void playable_character::movingRight(grid& map)
-{
-	map.movingRight(*this);
+int playable_character::getHP() {
+	return hp;
 }
 
-std::ostream & operator<<(std::ostream& file, playable_character & c)
+void playable_character::attacking(playable_character & c)
 {
-	file << c.getName() << std::endl;
-	file << "Str: " << c.getStrength() << std::endl;
-	file << "Spd: " << c.getSpeed() << std::endl;
-	file << "Def: " << c.getDefense() << std::endl;
-	file << "Res: " << c.getResistance() << std::endl;
-	file << "Rge: " << c.getRange() << std::endl;
-	file << "Mvm: " << c.getMovement() << std::endl;
-	return file;
+	c.hp = strength - c.resistance;
 }
+

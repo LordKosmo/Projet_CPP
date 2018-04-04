@@ -14,37 +14,85 @@ grid::grid()
 grid::~grid()
 {
 	for (int i = 0; i < SIZE; ++i) {
-		delete [] map[i];
+		delete[] map[i];
 	}
 	delete[] map;
 }
 
-void grid::print()
+cell & grid::getCell(int i, int j)
 {
-	for (int i = 0; i < SIZE; ++i)   {
-		for (int j = 0; j < SIZE; ++j) {
-			map[i][j].print();
-		}
-		std::cout << std::endl;
-	}
+	return map[i][j];
 }
 
 void grid::addChara(int i, int j, playable_character& chara)
 {
-	if(i >= 0 && i < SIZE && j >= 0 && j < SIZE)
-	map[i][j].putChara(chara);
+	if (i >= 0 && i < SIZE && j >= 0 && j < SIZE)
+		map[i][j].putChara(chara);
 }
 
-void grid::movingRight(playable_character & chara)
+void grid::moving(playable_character & c, int a)
 {
-	for (int i = 0; i < SIZE; ++i) {
-		for (int j = 0; j < SIZE; ++j) {
-			if (&chara == &map[i]->getChara()) {
-				if (j < SIZE - 1) {
-					map[i][j].resetChara();
-					map[i][j + 1].putChara(chara);
+	switch (a) {
+	case TOP:
+	{
+		for (int i = 0; i < SIZE; ++i) {
+			for (int j = 0; j < SIZE; ++j) {
+				if (&map[i][j].getChara() == &c) {
+					if (i > 0) {
+						map[i][j].resetChara();
+						map[i - 1][j].putChara(c);
+						break;
+					}
 				}
 			}
 		}
+		break;
+	}
+	case RIGHT:
+	{
+		for (int i = 0; i < SIZE; ++i) {
+			for (int j = 0; j < SIZE; ++j) {
+				if (&map[i][j].getChara() == &c) {
+					if (j < SIZE - 1) {
+						map[i][j].resetChara();
+						map[i][j + 1].putChara(c);
+						break;
+					}
+				}
+			}
+		}
+		break;
+	}
+	case BOT:
+	{
+		for (int i = 0; i < SIZE; ++i) {
+			for (int j = 0; j < SIZE; ++j) {
+				if (&map[i][j].getChara() == &c) {
+					if (i < SIZE - 1) {
+						map[i][j].resetChara();
+						map[i + 1][j].putChara(c);
+						i = SIZE;
+						break;
+					}
+				}
+			}
+		}
+		break;
+	}
+	case LEFT:
+	{
+		for (int i = 0; i < SIZE; ++i) {
+			for (int j = 0; j < SIZE; ++j) {
+				if (&map[i][j].getChara() == &c) {
+					if (j > 0) {
+						map[i][j].resetChara();
+						map[i][j - 1].putChara(c);
+						break;
+					}
+				}
+			}
+		}
+		break;
+	}
 	}
 }

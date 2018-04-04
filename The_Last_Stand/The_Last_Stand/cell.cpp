@@ -14,18 +14,16 @@ cell::~cell()
 {
 }
 
-void cell::print() {
-	if(chara==nullptr)
-		std::cout << "[" << type << "]";
-	else
-		std::cout << "[" << chara->getName()[0] << "]";
+std::string cell::getType()
+{
+	return type;
 }
 
 void cell::putChara(playable_character& c) {
 	chara = &c;
 }
 
-playable_character cell::getChara()
+playable_character & cell::getChara()
 {
 	return *chara;
 }

@@ -116,11 +116,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="cell.h" />
+    <ClInclude Include="gameView.h" />
     <ClInclude Include="grid.h" />
     <ClInclude Include="playable_character.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cell.cpp" />
+    <ClCompile Include="gameView.cpp" />
     <ClCompile Include="grid.cpp" />
     <ClCompile Include="playable_character.cpp" />
     <ClCompile Include="main.cpp" />

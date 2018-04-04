@@ -8,9 +8,10 @@ class cell
 public:
 	cell();
 	~cell();
-	void print();
+	//void print();
+	std::string getType();
 	void putChara(playable_character& c);
-	playable_character getChara();
+	playable_character& getChara();
 	void resetChara();
 private:
 	int bonus;

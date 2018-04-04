@@ -24,6 +24,9 @@
     <ClInclude Include="grid.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="gameView.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cell.cpp">
@@ -36,6 +39,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="grid.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="gameView.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

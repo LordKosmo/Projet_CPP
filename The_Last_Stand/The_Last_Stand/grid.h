@@ -2,15 +2,16 @@
 #define H_GRID
 #include "cell.h"
 #define SIZE 10
+enum { TOP = 0, RIGHT = 1, BOT = 2, LEFT = 3 };
 class grid
 {
 public:
 	grid();
 	~grid();
-	void print();
+	cell& getCell(int, int);
 	void addChara(int, int, playable_character&);
-	void movingRight(playable_character&);
+	void moving(playable_character&, int a);
 private:
-	cell ** map;
+	cell * * map;
 };
 #endif

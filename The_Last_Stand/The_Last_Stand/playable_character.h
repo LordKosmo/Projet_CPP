@@ -2,7 +2,7 @@
 #define H_CHARACTER
 #include <string>
 #include <iostream>
-#include "grid.h"
+#include "cell.h"
 class playable_character
 {
 public:
@@ -16,7 +16,8 @@ public:
 	int getResistance();
 	int getRange();
 	int getMovement();
-	void movingRight(grid& map);
+	int getHP();
+	void attacking(playable_character &);
 private:
 	std::string name;
 	int strength;
@@ -25,7 +26,7 @@ private:
 	int resistance;
 	int range;
 	int movement;
+	int hp;
 };
 
-std::ostream& operator<<(std::ostream& file, playable_character& c);
 #endif

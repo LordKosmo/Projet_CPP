@@ -1,27 +1,25 @@
 ﻿  cell.cpp
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(11): error C2061: erreur de syntaxe : identificateur 'playable_character'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(12): error C2061: erreur de syntaxe : identificateur 'playable_character'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(14): error C2143: erreur de syntaxe : absence de ';' avant '*'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(14): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(14): error C2238: jetons inattendus avant ';'
+  gameView.cpp
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(13): error C2061: erreur de syntaxe : identificateur 'playable_character'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(14): error C2143: erreur de syntaxe : absence de ';' avant '&'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(14): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(14): error C2238: jetons inattendus avant ';'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(19): error C2143: erreur de syntaxe : absence de ';' avant '*'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(19): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(19): error C2238: jetons inattendus avant ';'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\gameview.cpp(26): error C2039: 'getChara' : n'est pas membre de 'cell'
+  d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(7): note: voir la déclaration de 'cell'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\gameview.cpp(29): error C2039: 'getChara' : n'est pas membre de 'cell'
+  d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(7): note: voir la déclaration de 'cell'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\gameview.cpp(29): error C2228: la partie gauche de '.getName' doit avoir un class/struct/union
   grid.cpp
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\playable_character.h(19): error C2061: erreur de syntaxe : identificateur 'grid'
-  main.cpp
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(11): error C2061: erreur de syntaxe : identificateur 'playable_character'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(12): error C2061: erreur de syntaxe : identificateur 'playable_character'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(14): error C2143: erreur de syntaxe : absence de ';' avant '*'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(14): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(14): error C2238: jetons inattendus avant ';'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\main.cpp(17): error C2660: 'grid::addChara' : la fonction ne prend pas 3 arguments
   playable_character.cpp
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(12): error C2061: erreur de syntaxe : identificateur 'playable_character'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(13): error C3646: 'getChara' : spécificateur de substitution inconnu
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(13): error C2059: erreur de syntaxe : '('
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(13): error C2238: jetons inattendus avant ';'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(18): error C2143: erreur de syntaxe : absence de ';' avant '*'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(18): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(18): error C2238: jetons inattendus avant ';'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(11): error C2061: erreur de syntaxe : identificateur 'playable_character'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\grid.h(12): error C2061: erreur de syntaxe : identificateur 'playable_character'
-d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\playable_character.cpp(57): error C2660: 'grid::movingRight' : la fonction ne prend pas 1 arguments
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(13): error C2061: erreur de syntaxe : identificateur 'playable_character'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(14): error C2143: erreur de syntaxe : absence de ';' avant '&'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(14): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(14): error C2238: jetons inattendus avant ';'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(19): error C2143: erreur de syntaxe : absence de ';' avant '*'
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(19): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+d:\users\alexi\source\repo\c++\projet_cpp\the_last_stand\the_last_stand\cell.h(19): error C2238: jetons inattendus avant ';'
+  main.cpp
   Génération de code en cours...
