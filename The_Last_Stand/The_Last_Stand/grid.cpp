@@ -39,8 +39,19 @@ void grid::moving(playable_character & c, int a)
 			for (int j = 0; j < SIZE; ++j) {
 				if (&map[i][j].getChara() == &c) {
 					if (i > 0) {
-						map[i][j].resetChara();
-						map[i - 1][j].putChara(c);
+						if (&map[i - 1][j].getChara() == nullptr) {
+							map[i][j].resetChara();
+							map[i - 1][j].putChara(c);
+						}
+						else {
+							map[i][j].getChara().attacking(map[i - 1][j].getChara());
+							if (map[i - 1][j].getChara().getHP() == 0) {
+								map[i - 1][j].resetChara();
+							}
+							else {
+								map[i - 1][j].getChara().attacking(map[i][j].getChara());
+							}
+						}
 						break;
 					}
 				}
@@ -54,8 +65,19 @@ void grid::moving(playable_character & c, int a)
 			for (int j = 0; j < SIZE; ++j) {
 				if (&map[i][j].getChara() == &c) {
 					if (j < SIZE - 1) {
-						map[i][j].resetChara();
-						map[i][j + 1].putChara(c);
+						if (&map[i][j + 1].getChara() == nullptr) {
+							map[i][j].resetChara();
+							map[i][j + 1].putChara(c);
+						}
+						else {
+							map[i][j].getChara().attacking(map[i][j + 1].getChara());
+							if (map[i][j + 1].getChara().getHP() == 0) {
+								map[i][j + 1].resetChara();
+							}
+							else {
+								map[i][j + 1].getChara().attacking(map[i][j].getChara());
+							}
+						}
 						break;
 					}
 				}
@@ -69,8 +91,19 @@ void grid::moving(playable_character & c, int a)
 			for (int j = 0; j < SIZE; ++j) {
 				if (&map[i][j].getChara() == &c) {
 					if (i < SIZE - 1) {
-						map[i][j].resetChara();
-						map[i + 1][j].putChara(c);
+						if (&map[i + 1][j].getChara() == nullptr) {
+							map[i][j].resetChara();
+							map[i + 1][j].putChara(c);
+						}
+						else {
+							map[i][j].getChara().attacking(map[i + 1][j].getChara());
+							if (map[i + 1][j].getChara().getHP() == 0) {
+								map[i + 1][j].resetChara();
+							}
+							else {
+								map[i + 1][j].getChara().attacking(map[i][j].getChara());
+							}
+						}
 						i = SIZE;
 						break;
 					}
@@ -85,8 +118,19 @@ void grid::moving(playable_character & c, int a)
 			for (int j = 0; j < SIZE; ++j) {
 				if (&map[i][j].getChara() == &c) {
 					if (j > 0) {
-						map[i][j].resetChara();
-						map[i][j - 1].putChara(c);
+						if (&map[i][j - 1].getChara() == nullptr) {
+							map[i][j].resetChara();
+							map[i][j - 1].putChara(c);
+						}
+						else {
+							map[i][j].getChara().attacking(map[i][j - 1].getChara());
+							if (map[i][j - 1].getChara().getHP() == 0) {
+								map[i][j - 1].resetChara();
+							}
+							else {
+								map[i][j - 1].getChara().attacking(map[i][j].getChara());
+							}
+						}
 						break;
 					}
 				}

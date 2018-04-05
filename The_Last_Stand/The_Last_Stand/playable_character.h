@@ -2,7 +2,6 @@
 #define H_CHARACTER
 #include <string>
 #include <iostream>
-#include "cell.h"
 class playable_character
 {
 public:
@@ -13,11 +12,11 @@ public:
 	int getStrength();
 	int getSpeed();
 	int getDefense();
-	int getResistance();
 	int getRange();
 	int getMovement();
 	int getHP();
-	void attacking(playable_character &);
+	int getResistance();
+	void attacking(playable_character & c);
 private:
 	std::string name;
 	int strength;

@@ -32,9 +32,12 @@ void gameView::printCell(cell& c) {
 std::ostream & operator<<(std::ostream& file, playable_character & c)
 {
 	file << c.getName() << std::endl;
+	file << "HP: " << c.getHP() << std::endl;
 	file << "Str: " << c.getStrength() << std::endl;
 	file << "Spd: " << c.getSpeed() << std::endl;
 	file << "Def: " << c.getDefense() << std::endl;
 	file << "Res: " << c.getResistance() << std::endl;
+	file << "Rge: " << c.getRange() << std::endl;
+	file << "Mvt: " << c.getMovement() << std::endl;
 	return file;
 }

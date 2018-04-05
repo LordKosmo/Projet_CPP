@@ -6,7 +6,6 @@ playable_character::playable_character()
 }
 
 playable_character::playable_character(std::string n) {
-	//playable_character();
 	name = n;
 	strength = 6;
 	speed = 4;
@@ -42,11 +41,6 @@ int playable_character::getDefense()
 	return defense;
 }
 
-int playable_character::getResistance()
-{
-	return resistance;
-}
-
 int playable_character::getRange() {
 	return range;
 }
@@ -59,8 +53,11 @@ int playable_character::getHP() {
 	return hp;
 }
 
-void playable_character::attacking(playable_character & c)
+int playable_character::getResistance()
 {
-	c.hp = strength - c.resistance;
+	return resistance;
 }
 
+void playable_character::attacking(playable_character & c) {
+	c.hp -= strength - c.defense;
+}
