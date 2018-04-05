@@ -11,7 +11,9 @@ public:
 	cell& getCell(int, int);
 	void addChara(int, int, playable_character&);
 	void moving(playable_character&, int a);
+	
 private:
 	cell * * map;
 };
+bool verifBounds(int a, int i, int j);
 #endif
