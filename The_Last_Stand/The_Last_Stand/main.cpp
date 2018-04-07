@@ -16,8 +16,9 @@ int main() {
 	gameView game;
 	playable_character c("Kerrigan",5);
 	playable_character f("Fenix",4);
-	playable_character m("Mengsk",3);
-	enemy e1;
+	playable_character m("Zerging",3);
+	enemy e1("Peon1");
+	enemy e2("Péon2");
 
 
 	cout << "Welcome to our game :" << endl;
@@ -26,6 +27,8 @@ int main() {
 	g.addChara(0, 0, c);
 	g.addChara(0, 1, f);
 	g.addChara(0, 5, m);
+	g.addChara(9, 9, e1);
+	g.addChara(9, 0, e2);
 	cout << "This is the grid: " << endl;
 	game.printGrid(g);
 	bool exit = false;

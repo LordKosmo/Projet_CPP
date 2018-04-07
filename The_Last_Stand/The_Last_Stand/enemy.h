@@ -1,7 +1,7 @@
 #ifndef H_ENEMY
 #define H_ENEMY
 #include "character.h"
-class enemy : character
+class enemy : public character
 {
 public:
 	enemy(std::string n);

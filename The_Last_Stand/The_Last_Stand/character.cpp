@@ -2,6 +2,13 @@
 
 character::character()
 {
+	strength = 6;
+	speed = 4;
+	defense = 1;
+	resistance = 0;
+	range = 1;
+	movement = 1;
+	hp = 10;
 
 }
 
