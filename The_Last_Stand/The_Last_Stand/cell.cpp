@@ -19,11 +19,11 @@ std::string cell::getType()
 	return type;
 }
 
-void cell::putChara(playable_character& c) {
+void cell::putChara(character& c) {
 	chara = &c;
 }
 
-playable_character & cell::getChara()
+character & cell::getChara()
 {
 	return *chara;
 }

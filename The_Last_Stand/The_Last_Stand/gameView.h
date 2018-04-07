@@ -1,7 +1,7 @@
 #ifndef H_GAMEVIEW
 #define H_GAMEVIEW
 #include <iostream>
-#include "playable_character.h"
+#include "character.h"
 #include "grid.h"
 class gameView
 {
@@ -13,6 +13,6 @@ public:
 
 };
 
-std::ostream& operator<<(std::ostream& file, playable_character& c);
+std::ostream& operator<<(std::ostream& file, character& c);
 
 #endif;

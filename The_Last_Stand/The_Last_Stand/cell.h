@@ -2,7 +2,7 @@
 #define H_CELL
 #include <string>
 #include <iostream>
-#include "playable_character.h"
+#include "character.h"
 class cell
 {
 public:
@@ -10,13 +10,13 @@ public:
 	~cell();
 	//void print();
 	std::string getType();
-	void putChara(playable_character& c);
-	playable_character& getChara();
+	void putChara(character& c);
+	character& getChara();
 	void resetChara();
 private:
 	int bonus;
 	std::string type;
-	playable_character* chara;
+	character* chara;
 };
 
 #endif

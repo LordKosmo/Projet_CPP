@@ -29,7 +29,7 @@ void gameView::printCell(cell& c) {
 		std::cout << "[" << c.getChara().getName()[0] << "]";
 }
 
-std::ostream & operator<<(std::ostream& file, playable_character & c)
+std::ostream & operator<<(std::ostream& file, character & c)
 {
 	file << c.getName() << std::endl;
 	file << "HP: " << c.getHP() << std::endl;

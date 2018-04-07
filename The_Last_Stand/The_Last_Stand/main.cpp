@@ -2,9 +2,11 @@
 #include <fstream>
 #include <string>
 #include "cell.h"
+#include "character.h"
 #include "playable_character.h"
 #include "grid.h"
 #include "gameView.h"
+#include "enemy.h"
 #define SIZE 10
 
 using namespace std;
@@ -12,9 +14,12 @@ using namespace std;
 int main() {
 	grid g;
 	gameView game;
-	playable_character c("Kerrigan");
-	playable_character f("Fenix");
-	playable_character m("Mengsk");
+	playable_character c("Kerrigan",5);
+	playable_character f("Fenix",4);
+	playable_character m("Mengsk",3);
+	enemy e1;
+
+
 	cout << "Welcome to our game :" << endl;
 	cout << "This is our first character: " << endl;
 	cout << c << endl;

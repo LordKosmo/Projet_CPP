@@ -24,13 +24,13 @@ cell & grid::getCell(int i, int j)
 	return map[i][j];
 }
 
-void grid::addChara(int i, int j, playable_character& chara)
+void grid::addChara(int i, int j, character& chara)
 {
 	if (i >= 0 && i < SIZE && j >= 0 && j < SIZE)
 		map[i][j].putChara(chara);
 }
 
-void grid::moving(playable_character & c, int a)
+void grid::moving(character & c, int a)
 {
 	int k = 0;
 	int d = 0;

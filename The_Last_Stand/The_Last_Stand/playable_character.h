@@ -1,31 +1,13 @@
-#ifndef H_CHARACTER
-#define H_CHARACTER
-#include <string>
-#include <iostream>
-class playable_character
+#ifndef H_PCHARACTER
+#define H_PCHARACTER
+#include "character.h"
+class playable_character : public character
 {
-public:
-	playable_character();
-	playable_character(std::string name);
-	~playable_character();
-	std::string getName();
-	int getStrength();
-	int getSpeed();
-	int getDefense();
-	int getRange();
-	int getMovement();
-	int getHP();
-	int getResistance();
-	void attacking(playable_character & c);
 private:
-	std::string name;
-	int strength;
-	int speed;
-	int defense;
-	int resistance;
-	int range;
-	int movement;
-	int hp;
+	int rarity;
+public:
+	playable_character(std::string n,int rarity);
+	virtual ~playable_character();
 };
-
 #endif
+

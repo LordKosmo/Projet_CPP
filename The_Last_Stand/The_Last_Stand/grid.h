@@ -9,8 +9,8 @@ public:
 	grid();
 	~grid();
 	cell& getCell(int, int);
-	void addChara(int, int, playable_character&);
-	void moving(playable_character&, int a);
+	void addChara(int, int, character&);
+	void moving(character&, int a);
 	
 private:
 	cell * * map;
