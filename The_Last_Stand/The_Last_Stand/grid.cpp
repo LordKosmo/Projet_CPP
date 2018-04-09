@@ -102,3 +102,64 @@ bool verifBounds(int a, int i, int j) {
 	}
 	return false;
 }
+
+int grid::caracterOnLane(character& e, int lane, int currentPosition) {
+	for (int i = 0; i < SIZE; ++i) {
+		if (&map[lane][i].getChara() != nullptr && &map[lane][i].getChara() != &e) {
+			if (i > currentPosition) {
+				return 1;
+			}
+			else {
+				return -1;
+			}
+		}
+	}
+	return 0;
+}
+
+int grid::caracterOnRow(character& e, int row, int currentPosition) {
+	for (int i = 0; i < SIZE; ++i) {
+		if (&map[i][row].getChara() != nullptr && &map[i][row].getChara() != &e) {
+			if (i > currentPosition) {
+				return 1;
+			}
+			else {
+				return -1;
+			}
+		}
+	}
+	return 0;
+}
+
+void grid::movingEnemy(character& e) {
+	int line, row = 0;
+	for (int i = 0; i < SIZE; ++i) {
+		for (int j = 0; j < SIZE; ++j) {
+			if (&map[i][j].getChara() == &e) {
+				line = i;
+				row = j;
+			}
+		}
+	}
+	int a, b = 0;
+	a = caracterOnLane(e, line, row);
+	b = caracterOnRow(e, row, line);
+	if (b != 0) {
+		if (b > 0) {
+			moving(e, BOT);
+		}
+		else {
+			moving(e, TOP);
+		}
+	}
+	else {
+		if (a != 0) {
+			if (a > 0) {
+				moving(e, RIGHT);
+			}
+			else {
+				moving(e, LEFT);
+			}
+		}
+	}
+}
