@@ -27,7 +27,7 @@ int main() {
 	g.addChara(0, 0, c);
 	g.addChara(0, 1, f);
 	g.addChara(0, 5, m);
-	g.addChara(9, 9, e1);
+	//g.addChara(9, 9, e1);
 	g.addChara(9, 0, e2);
 	cout << "This is the grid: " << endl;
 	game.printGrid(g);
@@ -48,6 +48,9 @@ int main() {
 			if(m.getHP() > 0)
 				cout << m << endl;
 		}
+		//g.movingEnemy(e1);
+		g.movingEnemy(e2);
+		game.printGrid(g);
 	}
 	if (c.getHP() == 0) {
 		cout << "You lose" << endl;
