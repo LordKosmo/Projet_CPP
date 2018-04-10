@@ -37,16 +37,16 @@ void grid::moving(character & c, int a)
 	switch (a) {
 
 	case TOP:
-		k = -1;
+		k = -c.getMovement();
 		break;
 	case RIGHT:
-		d = 1;
+		d = c.getMovement();
 		break;
 	case BOT:
-		k = 1;
+		k = c.getMovement();
 		break;
 	case LEFT:
-		d = -1;
+		d = - c.getMovement();
 		break;
 	}
 	for (int i = 0; i < SIZE; ++i) {
@@ -132,7 +132,7 @@ int grid::caracterOnRow(character& e, int row, int currentPosition) {
 }
 
 void grid::movingEnemy(character& e) {
-	int line, row = 0;
+	int line = 0, row = 0;
 	for (int i = 0; i < SIZE; ++i) {
 		for (int j = 0; j < SIZE; ++j) {
 			if (&map[i][j].getChara() == &e) {

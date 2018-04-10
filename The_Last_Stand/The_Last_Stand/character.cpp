@@ -1,5 +1,30 @@
 #include "character.h"
+#include "Buff.h"
+#include "Iskill.h"
+#include <map>
+#include <typeinfo>
 
+enum characteristics {
+	strength,
+	speed,
+	defense,
+	resistance,
+	range,
+	movement,
+	hp,
+};
+
+
+std::map<std::string, characteristics> statCode =
+{
+	{ "Strength", strength },
+	{ "Speed", speed },
+	{ "Defense", defense },
+	{ "Resistance", resistance },
+	{ "Range", range },
+	{ "movement", movement },
+	{ "HP", hp }
+};
 character::character()
 {
 	strength = 6;
@@ -9,7 +34,8 @@ character::character()
 	range = 1;
 	movement = 1;
 	hp = 10;
-
+	type = Normal;
+	applyType();
 }
 
 character::character(std::string n) {
@@ -21,8 +47,26 @@ character::character(std::string n) {
 	range = 1;
 	movement = 1;
 	hp = 10;
+	type = Normal;
+	applyType();
 }
-  
+
+character::character(std::string n, Type t)
+{
+	name = n;
+	strength = 6;
+	speed = 4;
+	defense = 1;
+	resistance = 0;
+	range = 1;
+	movement = 1;
+	hp = 10;
+	type = t;
+	applyType();
+}
+
+
+
 
 
 character::~character()
@@ -69,3 +113,78 @@ int character::getResistance()
 void character::attacking(character & c) {
 	c.hp -= strength - c.defense;
 }
+
+void character::setSkill(Iskill* skill)
+{
+	Skill = *skill;
+	std::cout << typeid(skill).name();
+
+
+
+	if (Buff *b = dynamic_cast<Buff*>(skill)) {
+		//Buff *b = dynamic_cast<Buff*>(skill);
+		applyBuff(b);
+	}
+
+
+}
+
+void character::applyType()
+{
+	switch (type) {
+		case Normal:
+			break;
+		case Tank:
+			hp += 10;
+			defense += 10;
+			movement -= 1;
+			break;
+		case Ninja:
+			speed += 10;
+			movement += 1;
+			break;
+		case Berserk:
+			strength += 15;
+			hp += 5;
+			break;
+		case Bowman:
+			speed += 10;
+			range += 1;
+			break;
+		}
+}
+
+
+void character::applyBuff(Buff *b)
+{
+
+	characteristics actualstat = statCode[b->getStat()];
+
+	switch (actualstat) {
+	case characteristics::strength:
+		strength += b->getValue();
+		break;
+	case characteristics::speed:
+		speed += b->getValue();
+		break;
+	case characteristics::defense:
+		defense += b->getValue();
+		break;
+	case characteristics::resistance:
+		resistance += b->getValue();
+		break;
+	case characteristics::range:
+		range += b->getValue();
+		break;
+	case characteristics::movement:
+		movement += b->getValue();
+		break;
+	case characteristics::hp:
+		hp += b->getValue();
+		break;
+	default:
+		std::cout << "Buff invalide";
+	}
+
+}
+

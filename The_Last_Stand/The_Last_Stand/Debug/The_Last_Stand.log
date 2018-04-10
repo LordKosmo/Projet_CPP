@@ -1,9 +1,2 @@
-﻿  cell.cpp
-  character.cpp
-  enemy.cpp
-  gameView.cpp
-  grid.cpp
-  main.cpp
-  playable_character.cpp
-  Génération de code en cours...
+﻿  main.cpp
   The_Last_Stand.vcxproj -> D:\EFREI\S6\C++\Projet\Projet_CPP\The_Last_Stand\Debug\The_Last_Stand.exe

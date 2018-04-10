@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers sources\Skill">
+      <UniqueIdentifier>{f3d232bf-bf96-4385-a8f1-5a6759cc9046}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cell.h">
@@ -31,6 +34,12 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="enemy.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Iskill.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Buff.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -55,6 +64,12 @@
     </ClCompile>
     <ClCompile Include="enemy.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Iskill.cpp">
+      <Filter>Fichiers sources\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="Buff.cpp">
+      <Filter>Fichiers sources\Skill</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

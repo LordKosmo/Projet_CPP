@@ -7,6 +7,7 @@
 #include "grid.h"
 #include "gameView.h"
 #include "enemy.h"
+#include "Buff.h"
 #define SIZE 10
 
 using namespace std;
@@ -14,7 +15,10 @@ using namespace std;
 int main() {
 	grid g;
 	gameView game;
-	playable_character c("Kerrigan",5);
+
+	Buff Force10("Muscle","Strength",10);
+	playable_character c("Kerrigan",character::Berserk,5);
+	c.setSkill(&Force10);
 	playable_character f("Fenix",4);
 	playable_character m("Zerging",3);
 	enemy e1("Peon1");
