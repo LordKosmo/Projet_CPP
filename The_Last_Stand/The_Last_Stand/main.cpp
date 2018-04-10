@@ -7,6 +7,7 @@
 #include "grid.h"
 #include "gameView.h"
 #include "enemy.h"
+#include "Buff.h"
 #define SIZE 10
 
 using namespace std;
@@ -14,9 +15,14 @@ using namespace std;
 int main() {
 	grid g;
 	gameView game;
-	playable_character c("Kerrigan",5);
-	playable_character f("Fenix",4);
-	playable_character m("Zerging",3);
+
+	Buff Force10("Muscle","Strength",10);
+	playable_character c("Kerrigan",character::Berserk,5);
+	c.setSkill(&Force10);
+	//playable_character f("Fenix",4);
+	enemy f("Fenix");
+	//playable_character m("Zerging",3);
+	enemy m("Zergling");
 	enemy e1("Peon1");
 	enemy e2("Péon2");
 
@@ -41,6 +47,9 @@ int main() {
 		}
 		else {
 			g.moving(c, choice);
+			g.movingEnemy(f);
+			g.movingEnemy(m);
+			g.movingEnemy(e2);
 			game.printGrid(g);
 			cout << c << endl;
 			if(f.getHP() > 0)
@@ -49,8 +58,6 @@ int main() {
 				cout << m << endl;
 		}
 		//g.movingEnemy(e1);
-		g.movingEnemy(e2);
-		game.printGrid(g);
 	}
 	if (c.getHP() == 0) {
 		cout << "You lose" << endl;
