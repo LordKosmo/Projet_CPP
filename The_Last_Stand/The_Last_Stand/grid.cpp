@@ -52,7 +52,7 @@ void grid::moving(character & c, int a)
 	for (int i = 0; i < SIZE; ++i) {
 		for (int j = 0; j < SIZE; ++j) {
 			if (&map[i][j].getChara() == &c) {
-				if (verifBounds(a, i, j)) {
+				if (verifBounds(a, i, j,c)) {
 					if (&map[i + k][j + d].getChara() == nullptr) {
 						map[i][j].resetChara();
 						map[i + k][j + d].putChara(c);
@@ -76,7 +76,7 @@ void grid::moving(character & c, int a)
 
 
 }
-bool verifBounds(int a, int i, int j) {
+bool verifBounds(int a, int i, int j,character &c) {
 	switch (a) {
 	case TOP:
 		if (i > 0) {
@@ -84,12 +84,12 @@ bool verifBounds(int a, int i, int j) {
 		}
 		break;
 	case RIGHT:
-		if (j < SIZE - 1) {
+		if (j < SIZE - c.getMovement()) {
 			return true;
 		}
 		break;
 	case BOT:
-		if (i < SIZE - 1) {
+		if (i < SIZE - c.getMovement()) {
 			return true;
 		}
 		break;
