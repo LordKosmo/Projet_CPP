@@ -21,5 +21,5 @@ public:
 private:
 	cell * * map;
 };
-bool verifBounds(int a, int i, int j);
+bool verifBounds(int a, int i, int j,character &c);
 #endif
