@@ -164,5 +164,15 @@ void grid::movingEnemy(character& e) {
 				moving(e, LEFT);
 			}
 		}
+		else {
+			moving(e, rand() % 4);
+		}
+	}
+}
+
+void grid::spawning() {
+	if (&map[0][9].getChara() != nullptr) {
+		character e("Peon");
+		map[0][9].putChara(e);
 	}
 }

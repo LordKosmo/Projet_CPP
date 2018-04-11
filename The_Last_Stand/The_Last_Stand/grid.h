@@ -17,6 +17,8 @@ public:
 	int caracterOnRow(character & e, int row, int currentPosition);
 
 	void movingEnemy(character & e);
+
+	void spawning();
 	
 private:
 	cell * * map;
