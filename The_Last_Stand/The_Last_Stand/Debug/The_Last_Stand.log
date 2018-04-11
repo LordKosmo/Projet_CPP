@@ -1,2 +1,13 @@
-﻿  Spells.cpp
-  The_Last_Stand.vcxproj -> D:\EFREI\S6\C++\Projet\Projet_CPP\The_Last_Stand\Debug\The_Last_Stand.exe
+﻿  Buff.cpp
+  cell.cpp
+  enemy.cpp
+  game.cpp
+  gameView.cpp
+  grid.cpp
+  character.cpp
+  Iskill.cpp
+  main.cpp
+  playable_character.cpp
+  Spells.cpp
+  Génération de code en cours...
+  The_Last_Stand.vcxproj -> E:\C++\Project\Projet_CPP\The_Last_Stand\Debug\The_Last_Stand.exe

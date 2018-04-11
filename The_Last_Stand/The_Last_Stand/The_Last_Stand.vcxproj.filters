@@ -1,89 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Fichiers sources">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Fichiers de ressources">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Fichiers sources\Skill">
-      <UniqueIdentifier>{f3d232bf-bf96-4385-a8f1-5a6759cc9046}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="Buff.cpp" />
+    <ClCompile Include="cell.cpp" />
+    <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="gameView.cpp" />
+    <ClCompile Include="grid.cpp" />
+    <ClCompile Include="character.cpp" />
+    <ClCompile Include="Iskill.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="playable_character.cpp" />
+    <ClCompile Include="Spells.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cell.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="grid.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="gameView.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="character.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="playable_character.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="enemy.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Iskill.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Buff.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="Spells.h">
-=======
-    <ClInclude Include="game.h">
->>>>>>> 5e1c76952fde649d1189a53555e06165257a4def
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="cell.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="grid.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="gameView.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="character.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="playable_character.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="enemy.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Iskill.cpp">
-      <Filter>Fichiers sources\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="Buff.cpp">
-      <Filter>Fichiers sources\Skill</Filter>
-    </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="Spells.cpp">
-=======
-    <ClCompile Include="game.cpp">
->>>>>>> 5e1c76952fde649d1189a53555e06165257a4def
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
+    <ClInclude Include="Buff.h" />
+    <ClInclude Include="cell.h" />
+    <ClInclude Include="enemy.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="gameView.h" />
+    <ClInclude Include="grid.h" />
+    <ClInclude Include="character.h" />
+    <ClInclude Include="Iskill.h" />
+    <ClInclude Include="playable_character.h" />
+    <ClInclude Include="Spells.h" />
   </ItemGroup>
 </Project>
