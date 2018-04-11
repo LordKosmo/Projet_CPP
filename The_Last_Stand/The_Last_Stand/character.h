@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Iskill.h"
 #include "Buff.h"
+#include <map>
 class character
 {
 
@@ -14,6 +15,16 @@ public:
 		Ninja,
 		Bowman,
 		Normal,
+	};
+	std::map<std::string, characteristics> statCode =
+	{
+	{ "Strength", Strength },
+	{ "Speed", Speed },
+	{ "Defense", Defense },
+	{ "Resistance", Resistance },
+	{ "Range", Range },
+	{ "movement", Movement },
+	{ "HP", Hp }
 	};
 	character();
 	character(std::string name);
@@ -31,7 +42,7 @@ public:
 	void setSkill(Iskill *skill);
 	void applyType();
 	void applyBuff(Buff * b);
-
+	friend class Buff;
 
 private:
 	std::string name;
@@ -45,5 +56,15 @@ private:
 	Iskill Skill;
 	Type type;
 };
+enum characteristics {
+	Strength,
+	Speed,
+	Defense,
+	Resistance,
+	Range,
+	Movement,
+	Hp,
+};
+
 
 #endif

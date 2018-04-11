@@ -1,30 +1,6 @@
 #include "character.h"
 #include "Buff.h"
 #include "Iskill.h"
-#include <map>
-#include <typeinfo>
-
-enum characteristics {
-	strength,
-	speed,
-	defense,
-	resistance,
-	range,
-	movement,
-	hp,
-};
-
-
-std::map<std::string, characteristics> statCode =
-{
-	{ "Strength", strength },
-	{ "Speed", speed },
-	{ "Defense", defense },
-	{ "Resistance", resistance },
-	{ "Range", range },
-	{ "movement", movement },
-	{ "HP", hp }
-};
 character::character()
 {
 	strength = 6;
@@ -117,16 +93,10 @@ void character::attacking(character & c) {
 void character::setSkill(Iskill* skill)
 {
 	Skill = *skill;
-	std::cout << typeid(skill).name();
-
-
-
 	if (Buff *b = dynamic_cast<Buff*>(skill)) {
-		//Buff *b = dynamic_cast<Buff*>(skill);
-		applyBuff(b);
+		b->use(*this);
+		//applyBuff(b);
 	}
-
-
 }
 
 void character::applyType()

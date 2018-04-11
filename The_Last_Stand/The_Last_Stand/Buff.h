@@ -1,6 +1,7 @@
 #ifndef H_BUFF
 #define H_BUFF
 #include "Iskill.h"
+#include "character.h"
 class Buff : public Iskill
 {
 private:
@@ -13,8 +14,9 @@ public:
 	std::string getStat();
 	void setStat(std::string newStat);
 	int getValue();
+	int use(character &c);
 	void setValue(int value);
-	std::string getType();
+	
 };
 #endif
 

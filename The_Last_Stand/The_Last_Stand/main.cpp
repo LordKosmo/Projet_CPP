@@ -17,7 +17,7 @@ int main() {
 	gameView game;
 
 	Buff Force10("Muscle","Strength",10);
-	playable_character c("Kerrigan",character::Ninja,5);
+	playable_character c("Kerrigan",character::Berserk,5);
 	c.setSkill(&Force10);
 	//playable_character f("Fenix",4);
 	enemy f("Fenix");

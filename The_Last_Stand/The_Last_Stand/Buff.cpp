@@ -33,13 +33,43 @@ int Buff::getValue()
 	return value;
 }
 
+int Buff::use(character & c)
+{
+	
+	characteristics actualstat = c.statCode[stat];
+
+	switch (actualstat) {
+	case characteristics::Strength:
+		c.strength += value;
+		break;
+	case characteristics::Speed:
+		c.speed += value;
+		break;
+	case characteristics::Defense:
+		c.defense += value;
+		break;
+	case characteristics::Resistance:
+		c.resistance += value;
+		break;
+	case characteristics::Range:
+		c.range += value;
+		break;
+	case characteristics::Movement:
+		c.movement += value;
+		break;
+	case characteristics::Hp:
+		c.hp += value;
+		break;
+	default:
+		std::cout << "Buff invalide";
+	}
+	
+}
+
 void Buff::setValue(int newValue)
 {
 	value = value;
 
 }
 
-std::string Buff::getType()
-{
-	return "Buff";
-}
+

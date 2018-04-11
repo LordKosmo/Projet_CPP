@@ -42,6 +42,9 @@
     <ClInclude Include="Buff.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Spells.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cell.cpp">
@@ -70,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="Buff.cpp">
       <Filter>Fichiers sources\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="Spells.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

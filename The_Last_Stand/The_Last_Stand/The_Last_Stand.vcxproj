@@ -123,6 +123,7 @@
     <ClInclude Include="character.h" />
     <ClInclude Include="Iskill.h" />
     <ClInclude Include="playable_character.h" />
+    <ClInclude Include="Spells.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buff.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="Iskill.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="playable_character.cpp" />
+    <ClCompile Include="Spells.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
