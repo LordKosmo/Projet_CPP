@@ -3,7 +3,7 @@
 #include "string"
  class Iskill
 {
-private:
+protected:
 	std::string name;
 public:
 	Iskill();

@@ -42,7 +42,11 @@
     <ClInclude Include="Buff.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Spells.h">
+=======
+    <ClInclude Include="game.h">
+>>>>>>> 5e1c76952fde649d1189a53555e06165257a4def
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -74,7 +78,11 @@
     <ClCompile Include="Buff.cpp">
       <Filter>Fichiers sources\Skill</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Spells.cpp">
+=======
+    <ClCompile Include="game.cpp">
+>>>>>>> 5e1c76952fde649d1189a53555e06165257a4def
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

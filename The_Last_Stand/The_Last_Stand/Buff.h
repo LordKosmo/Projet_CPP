@@ -14,7 +14,7 @@ public:
 	std::string getStat();
 	void setStat(std::string newStat);
 	int getValue();
-	int use(character &c);
+	int use(character* c);
 	void setValue(int value);
 	
 };

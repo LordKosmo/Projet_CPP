@@ -3,6 +3,15 @@
 #include "Iskill.h"
 #include "playable_character.h"
 #include "enemy.h"
+#include <map>
+enum Spell{
+	fireball,
+	TimeControl,
+};
+static std::map<std::string, Spell>SpeelBook{
+	{ "fireball", fireball },
+	{ "TimeControl", TimeControl },
+};
 class Spells : public Iskill
 
 {
@@ -13,7 +22,7 @@ public:
 	Spells(std::string n, int cd);
 	Spells();
 	
-	virtual void use(playable_character c, enemy e) =0;
+	int use(character* c, character* e);
 	void decCooldown();
 
 	virtual ~Spells();

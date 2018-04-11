@@ -3,6 +3,7 @@
 #include <iostream>
 #include "character.h"
 #include "grid.h"
+#include "game.h"
 class gameView
 {
 public:
@@ -10,6 +11,7 @@ public:
 	~gameView();
 	void printGrid(grid& g);
 	void printCell(cell& c);
+	void printGame(game& g);
 
 };
 

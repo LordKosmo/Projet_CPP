@@ -1,5 +1,6 @@
 #include "character.h"
 #include "Buff.h"
+#include "Spells.h"
 #include "Iskill.h"
 character::character()
 {
@@ -64,6 +65,11 @@ int character::getSpeed()
 	return speed;
 }
 
+void character::setSpeed(int newspeed)
+{
+	speed = newspeed;
+}
+
 int character::getDefense()
 {
 	return defense;
@@ -86,18 +92,29 @@ int character::getResistance()
 	return resistance;
 }
 
-void character::attacking(character & c) {
-	c.hp -= strength - c.defense;
+void character::use(Iskill *Skill)
+{
+	if (Buff *b = dynamic_cast<Buff*>(Skill)) {
+		b->use(this);
+	}
+}
+
+void character::attacking(character & e) {
+	int damage;
+	damage = strength - e.defense;
+	
+	if (Spells *s = dynamic_cast<Spells*>(Skill)) {
+		 damage += s->use(this,	&e);
+	}
+	e.hp -= damage;
 }
 
 void character::setSkill(Iskill* skill)
 {
-	Skill = *skill;
-	if (Buff *b = dynamic_cast<Buff*>(skill)) {
-		b->use(*this);
-		//applyBuff(b);
-	}
+	Skill = skill;
+	use(skill);
 }
+
 
 void character::applyType()
 {
@@ -124,32 +141,32 @@ void character::applyType()
 		}
 }
 
-
+/*
 void character::applyBuff(Buff *b)
 {
 
 	characteristics actualstat = statCode[b->getStat()];
 
 	switch (actualstat) {
-	case characteristics::strength:
+	case characteristics::Strength:
 		strength += b->getValue();
 		break;
-	case characteristics::speed:
+	case characteristics::Speed:
 		speed += b->getValue();
 		break;
-	case characteristics::defense:
+	case characteristics::Defense:
 		defense += b->getValue();
 		break;
-	case characteristics::resistance:
+	case characteristics::Resistance:
 		resistance += b->getValue();
 		break;
-	case characteristics::range:
+	case characteristics::Range:
 		range += b->getValue();
 		break;
-	case characteristics::movement:
+	case characteristics::Movement:
 		movement += b->getValue();
 		break;
-	case characteristics::hp:
+	case characteristics::Hp:
 		hp += b->getValue();
 		break;
 	default:
@@ -157,4 +174,4 @@ void character::applyBuff(Buff *b)
 	}
 
 }
-
+*/

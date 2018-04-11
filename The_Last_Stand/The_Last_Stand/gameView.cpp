@@ -29,6 +29,11 @@ void gameView::printCell(cell& c) {
 		std::cout << "[" << c.getChara().getName()[0] << "]";
 }
 
+void gameView::printGame(game & g)
+{
+	printGrid(g.getMap());
+}
+
 std::ostream & operator<<(std::ostream& file, character & c)
 {
 	file << c.getName() << std::endl;
