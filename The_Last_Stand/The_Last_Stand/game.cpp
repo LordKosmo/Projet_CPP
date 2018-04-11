@@ -35,7 +35,7 @@ void game::movingCharacter(character & c, int choice)
 
 void game::enemyPhase()
 {
-	for (int i = 0; i < enemies.size(); ++i) {
+	for (unsigned int i = 0; i < enemies.size(); ++i) {
 		map->movingEnemy(*enemies[i]);
 	}
 }
@@ -49,12 +49,12 @@ bool game::gameOver()
 {
 	bool playableDead = true;
 	bool enemiesDead = true;
-	for (int i = 0; i < playable.size(); ++i) {
+	for (unsigned int i = 0; i < playable.size(); ++i) {
 		if (playable[i]->getHP() > 0) {
 			playableDead = false;
 		}
 	}
-	for (int i = 0; i < enemies.size(); ++i) {
+	for (unsigned int i = 0; i < enemies.size(); ++i) {
 		if (enemies[i]->getHP() > 0) {
 			enemiesDead = false;
 		}

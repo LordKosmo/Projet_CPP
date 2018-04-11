@@ -8,6 +8,7 @@
 #include "gameView.h"
 #include "enemy.h"
 #include "Buff.h"
+#include"Spells.h"
 #define SIZE 10
 
 using namespace std;
@@ -18,11 +19,15 @@ int main() {
 
 	gameView game;
 
-	Buff Force10("Muscle","Strength",10);
-	playable_character c("Kerrigan",character::Berserk,5);
+	Buff Force10("Muscle","Strength",10000);
+	Buff Increvable("Increvable", "HP", 30000);
+	Spells s("TimeControl",6);
+	playable_character c("Kerrigan",Berserk,5);
 	c.setSkill(&Force10);
+	c.setSkill(&s);
 	//playable_character f("Fenix",4);
 	enemy f("Fenix");
+	f.setSkill(&Increvable);
 	//playable_character m("Zerging",3);
 	enemy m("Zergling");
 	enemy e1("Peon1");

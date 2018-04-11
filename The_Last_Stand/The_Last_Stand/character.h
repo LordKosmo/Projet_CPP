@@ -3,36 +3,59 @@
 #include <string>
 #include <iostream>
 #include "Iskill.h"
-#include "Buff.h"
+#include <map>
+enum characteristics {
+	Strength,
+	Speed,
+	Defense,
+	Resistance,
+	Range,
+	Movement,
+	Hp,
+};
+static std::map<std::string, characteristics> statCode =
+{
+{ "Strength", Strength },
+{ "Speed", Speed },
+{ "Defense", Defense },
+{ "Resistance", Resistance },
+{ "Range", Range },
+{ "movement", Movement },
+{ "HP", Hp }
+};
+enum Type {
+	Tank,
+	Berserk,
+	Ninja,
+	Bowman,
+	Normal,
+};
 class character
 {
 
 public:
-	enum Type {
-		Tank,
-		Berserk,
-		Ninja,
-		Bowman,
-		Normal,
-	};
+
+
 	character();
 	character(std::string name);
-	character(std::string name,Type t);
+	character(std::string name, Type t);
 	~character();
 	std::string getName();
 	int getStrength();
 	int getSpeed();
+	void setSpeed(int newspeed);
 	int getDefense();
 	int getRange();
 	int getMovement();
 	int getHP();
 	int getResistance();
+	void use(Iskill *I);
 	void attacking(character & c);
 	void setSkill(Iskill *skill);
 	void applyType();
-	void applyBuff(Buff * b);
-
-
+	//void applyBuff(Buff * b);
+	friend class Buff;
+	friend class Spells;
 private:
 	std::string name;
 	int strength;
@@ -42,8 +65,10 @@ private:
 	int range;
 	int movement;
 	int hp;
-	Iskill Skill;
+	Iskill *Skill;
 	Type type;
 };
+
+
 
 #endif
