@@ -15,10 +15,12 @@ public:
 	void enemyPhase();
 	void addChara(int line, int row, character & c);
 	bool gameOver();
+	void spawning();
 
 private:
 	grid * map;
 	std::vector<character*> playable;
 	std::vector<character*> enemies;
+	std::vector<character*> spawn;
 };
 #endif

@@ -64,6 +64,7 @@ int main() {
 			g.movingEnemy(e2);
 			game.printGrid(g);*/
 			g.enemyPhase();
+			g.spawning();
 			game.printGame(g);
 			cout << c << endl;
 
@@ -71,7 +72,6 @@ int main() {
 				cout << f << endl;
 			if(m.getHP() > 0)
 				cout << m << endl;
-			//g.spawning();
 		}
 		//g.movingEnemy(e1);
 	}
