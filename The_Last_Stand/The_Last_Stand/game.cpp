@@ -1,4 +1,5 @@
 #include "game.h"
+#include "enemy.h"
 
 
 
@@ -10,6 +11,9 @@ game::game()
 
 game::~game()
 {
+	for (int i = 0; i < spawn.size(); ++i) {
+		delete spawn[i];
+	}
 	delete map;
 }
 
@@ -38,6 +42,9 @@ void game::enemyPhase()
 	for (unsigned int i = 0; i < enemies.size(); ++i) {
 		map->movingEnemy(*enemies[i]);
 	}
+	for (unsigned int i = 0; i < spawn.size(); ++i) {
+		map->movingEnemy(*spawn[i]);
+	}
 }
 
 void game::addChara(int line, int row, character & c)
@@ -60,4 +67,12 @@ bool game::gameOver()
 		}
 	}
 	return playableDead || enemiesDead;
+}
+
+void game::spawning() {
+	if (&map->getCell(0,9).getChara() == nullptr) {
+		character * e = new enemy("Peon");
+		spawn.push_back(e);
+		map->getCell(0, 9).putChara(*e);
+	}
 }

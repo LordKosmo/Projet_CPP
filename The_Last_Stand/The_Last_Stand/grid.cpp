@@ -1,5 +1,6 @@
 #include "grid.h"
 #include <iostream>
+#include "enemy.h"
 
 
 grid::grid()
@@ -109,11 +110,16 @@ bool verifBounds(int a, int i, int j,character &c) {
 int grid::caracterOnLane(character& e, int lane, int currentPosition) {
 	for (int i = 0; i < SIZE; ++i) {
 		if (&map[lane][i].getChara() != nullptr && &map[lane][i].getChara() != &e) {
-			if (i > currentPosition) {
-				return 1;
+			if (enemy *b = dynamic_cast<enemy*>(&map[lane][i].getChara())) {
+				
 			}
 			else {
-				return -1;
+				if (i > currentPosition) {
+					return 1;
+				}
+				else {
+					return -1;
+				}
 			}
 		}
 	}
@@ -123,11 +129,17 @@ int grid::caracterOnLane(character& e, int lane, int currentPosition) {
 int grid::caracterOnRow(character& e, int row, int currentPosition) {
 	for (int i = 0; i < SIZE; ++i) {
 		if (&map[i][row].getChara() != nullptr && &map[i][row].getChara() != &e) {
-			if (i > currentPosition) {
-				return 1;
+			//character * a = &map[i][row].getChara();
+			if (enemy *b = dynamic_cast<enemy*>(&map[i][row].getChara())) {
+				
 			}
 			else {
-				return -1;
+				if (i > currentPosition) {
+					return 1;
+				}
+				else {
+					return -1;
+				}
 			}
 		}
 	}
@@ -167,12 +179,5 @@ void grid::movingEnemy(character& e) {
 		else {
 			moving(e, rand() % 4);
 		}
-	}
-}
-
-void grid::spawning() {
-	if (&map[0][9].getChara() != nullptr) {
-		character e("Peon");
-		map[0][9].putChara(e);
 	}
 }

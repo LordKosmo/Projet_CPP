@@ -39,7 +39,7 @@ public:
 	character();
 	character(std::string name);
 	character(std::string name, Type t);
-	~character();
+	virtual ~character();
 	std::string getName();
 	int getStrength();
 	int getSpeed();
