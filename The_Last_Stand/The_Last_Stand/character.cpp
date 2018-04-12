@@ -141,6 +141,11 @@ void character::applyType()
 		}
 }
 
+void character::incStat() {
+	strength+=15;
+	hp += 5;
+}
+
 /*
 void character::applyBuff(Buff *b)
 {

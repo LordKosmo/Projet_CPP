@@ -22,7 +22,7 @@ grid & game::getMap()
 	return *map;
 }
 
-void game::addPlayable(character & c)
+void game::addPlayable(playable_character & c)
 {
 	playable.push_back(&c);
 }
@@ -56,6 +56,7 @@ bool game::gameOver()
 {
 	bool playableDead = true;
 	bool enemiesDead = true;
+	bool spawnDead = true;
 	for (unsigned int i = 0; i < playable.size(); ++i) {
 		if (playable[i]->getHP() > 0) {
 			playableDead = false;
@@ -66,13 +67,37 @@ bool game::gameOver()
 			enemiesDead = false;
 		}
 	}
-	return playableDead || enemiesDead;
+	for (unsigned int i = 0; i < spawn.size(); ++i) {
+		if (spawn[i]->getHP() > 0) {
+			spawnDead = false;
+		}
+	}
+	return playableDead || (enemiesDead && spawnDead);
 }
 
 void game::spawning() {
 	if (&map->getCell(0,9).getChara() == nullptr) {
 		character * e = new enemy("Peon");
+		e->incStat();
 		spawn.push_back(e);
 		map->getCell(0, 9).putChara(*e);
 	}
 }
+
+std::vector<playable_character*>& game::getplayable()
+{
+	// TODO: insérer une instruction return ici
+	return playable;
+}
+
+int game::getTurn()
+{
+	return turn;
+}
+
+void game::incTurn()
+{
+	turn++;
+}
+
+

@@ -53,6 +53,7 @@ public:
 	void attacking(character & c);
 	void setSkill(Iskill *skill);
 	void applyType();
+	void incStat();
 	//void applyBuff(Buff * b);
 	friend class Buff;
 	friend class Spells;
