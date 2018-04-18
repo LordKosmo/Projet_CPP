@@ -83,7 +83,7 @@ void grid::moving(character & c, int a)
 bool verifBounds(int a, int i, int j,character &c) {
 	switch (a) {
 	case TOP:
-		if (i > 0) {
+		if (i > 0 + c.getMovement()) {
 			return true;
 		}
 		break;
@@ -98,7 +98,7 @@ bool verifBounds(int a, int i, int j,character &c) {
 		}
 		break;
 	case LEFT:
-		if (j > 0) {
+		if (j > 0 + c.getMovement()) {
 			return true;
 		}
 		break;

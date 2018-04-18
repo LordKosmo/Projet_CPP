@@ -41,10 +41,23 @@ void game::enemyPhase()
 {
 	for (unsigned int i = 0; i < enemies.size(); ++i) {
 		map->movingEnemy(*enemies[i]);
+		if (enemies[i]->getHP() <= 0) {
+			enemies.erase(enemies.begin() + i);
+		}
 	}
 	for (unsigned int i = 0; i < spawn.size(); ++i) {
 		map->movingEnemy(*spawn[i]);
 	}
+	spawning();
+}
+
+int game::getIndex(character& c) {
+	for (int i = 0; i < playable.size(); ++i) {
+		if (&c == playable[i]) {
+			return i;
+		}
+	}
+	return 0;
 }
 
 void game::addChara(int line, int row, character & c)
@@ -76,12 +89,23 @@ bool game::gameOver()
 }
 
 void game::spawning() {
-	if (&map->getCell(0,9).getChara() == nullptr) {
+	if (&map->getCell(9,3).getChara() == nullptr) {
 		character * e = new enemy("Peon");
-		e->incStat();
+		for (int i = 0; i < turn; ++i) {
+			e->incStat();
+		}
 		spawn.push_back(e);
-		map->getCell(0, 9).putChara(*e);
+		map->getCell(9, 3).putChara(*e);
 	}
+	if (&map->getCell(9, 6).getChara() == nullptr) {
+		character * f = new enemy("Peon");
+		for (int i = 0; i < turn; ++i) {
+			f->incStat();
+		}
+		spawn.push_back(f);
+		map->getCell(9, 6).putChara(*f);
+	}
+
 }
 
 std::vector<playable_character*>& game::getplayable()
@@ -99,5 +123,6 @@ void game::incTurn()
 {
 	turn++;
 }
+
 
 

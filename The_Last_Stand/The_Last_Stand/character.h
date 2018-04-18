@@ -46,6 +46,7 @@ public:
 	void setSpeed(int newspeed);
 	int getDefense();
 	int getRange();
+	void setMovement(int new_mouvement);
 	int getMovement();
 	int getHP();
 	int getResistance();
@@ -57,6 +58,7 @@ public:
 	//void applyBuff(Buff * b);
 	friend class Buff;
 	friend class Spells;
+	friend class enemy;
 private:
 	std::string name;
 	int strength;

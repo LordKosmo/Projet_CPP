@@ -14,6 +14,7 @@ public:
 	void addEnemy(character & c);
 	void movingCharacter(character & c, int choice);
 	void enemyPhase();
+	int getIndex(character & c);
 	void addChara(int line, int row, character & c);
 	bool gameOver();
 	void spawning();

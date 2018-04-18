@@ -9,7 +9,7 @@ character::character()
 	defense = 1;
 	resistance = 0;
 	range = 1;
-	movement = 1;
+	movement = 2;
 	hp = 10;
 	type = Normal;
 	applyType();
@@ -22,7 +22,7 @@ character::character(std::string n) {
 	defense = 1;
 	resistance = 0;
 	range = 1;
-	movement = 1;
+	movement = 2;
 	hp = 10;
 	type = Normal;
 	applyType();
@@ -36,7 +36,7 @@ character::character(std::string n, Type t)
 	defense = 1;
 	resistance = 0;
 	range = 1;
-	movement = 1;
+	movement = 2;
 	hp = 10;
 	type = t;
 	applyType();
@@ -79,6 +79,10 @@ int character::getRange() {
 	return range;
 }
 
+void character::setMovement(int new_mouvement) {
+	movement = new_mouvement;
+}
+
 int character::getMovement() {
 	return movement;
 }
@@ -101,12 +105,15 @@ void character::use(Iskill *Skill)
 
 void character::attacking(character & e) {
 	int damage;
+	
 	damage = strength - e.defense;
 	
 	if (Spells *s = dynamic_cast<Spells*>(Skill)) {
-		 damage += s->use(this,	&e);
+		 s->use(this,	&e);
 	}
-	e.hp -= damage;
+	if (damage > 0) {
+		e.hp -= damage;
+	}
 }
 
 void character::setSkill(Iskill* skill)
@@ -142,8 +149,9 @@ void character::applyType()
 }
 
 void character::incStat() {
-	strength+=15;
-	hp += 5;
+	strength+=2;
+	hp += 2;
+	defense += 1;
 }
 
 /*

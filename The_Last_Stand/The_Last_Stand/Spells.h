@@ -7,10 +7,16 @@
 enum Spell{
 	fireball,
 	TimeControl,
+	Sayajin,
+	Training,
+	Lifesteal
 };
 static std::map<std::string, Spell>SpeelBook{
 	{ "fireball", fireball },
 	{ "TimeControl", TimeControl },
+	{"Sayajin",Sayajin},
+{"Training",Training},
+{"Lifesteal",Lifesteal}
 };
 class Spells : public Iskill
 
